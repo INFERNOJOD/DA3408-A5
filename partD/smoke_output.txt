@@ -1,0 +1,35 @@
+### release gate against v1 server, expecting v1
+[PASS] healthz reports expected version: {'status': 'ok', 'model_version': 'v1'}
+[PASS] predict returns expected version, sane values: version=v1 predictions=[66.4, 66.4]
+[PASS] sanity: longer distance never gives shorter ETA: 5/50/150 km -> [27.7, 143.8, 401.7]
+[PASS] sanity: heavier traffic never gives shorter ETA: traffic 0.1/0.9 -> [57.9, 92.1]
+[PASS] sanity: more stops never gives shorter ETA: stops 2/20 -> [53.4, 131.3]
+[PASS] invalid input returns 422: status=422
+[PASS] single-row p95 latency within limit: p95=1.4 ms (limit 80.0)
+
+7/7 checks passed -> GO
+exit code: 0
+
+### same server, but expecting v2 (wrong version must block the release)
+[FAIL] healthz reports expected version: {'status': 'ok', 'model_version': 'v1'}
+[FAIL] predict returns expected version, sane values: version=v1 predictions=[66.4, 66.4]
+[PASS] sanity: longer distance never gives shorter ETA: 5/50/150 km -> [27.7, 143.8, 401.7]
+[PASS] sanity: heavier traffic never gives shorter ETA: traffic 0.1/0.9 -> [57.9, 92.1]
+[PASS] sanity: more stops never gives shorter ETA: stops 2/20 -> [53.4, 131.3]
+[PASS] invalid input returns 422: status=422
+[PASS] single-row p95 latency within limit: p95=1.3 ms (limit 80.0)
+
+5/7 checks passed -> NO-GO
+exit code: 1
+
+### release gate against v2 server (port 8001), expecting v2
+[PASS] healthz reports expected version: {'status': 'ok', 'model_version': 'v2'}
+[PASS] predict returns expected version, sane values: version=v2 predictions=[68.0, 68.0]
+[PASS] sanity: longer distance never gives shorter ETA: 5/50/150 km -> [29.3, 134.9, 348.0]
+[PASS] sanity: heavier traffic never gives shorter ETA: traffic 0.1/0.9 -> [58.2, 89.5]
+[PASS] sanity: more stops never gives shorter ETA: stops 2/20 -> [55.7, 130.2]
+[PASS] invalid input returns 422: status=422
+[PASS] single-row p95 latency within limit: p95=1.8 ms (limit 80.0)
+
+7/7 checks passed -> GO
+exit code: 0
