@@ -1,0 +1,28 @@
+[
+  {
+    "concurrency": 32,
+    "requests": 2953,
+    "rps": 738.2,
+    "p50_ms": 38.2,
+    "p95_ms": 74.4,
+    "p99_ms": 163.3,
+    "errors": 0,
+    "replicas": 1,
+    "versions": {
+      "v1": 2953
+    }
+  },
+  {
+    "concurrency": 48,
+    "requests": 3374,
+    "rps": 843.5,
+    "p50_ms": 55.0,
+    "p95_ms": 84.7,
+    "p99_ms": 106.9,
+    "errors": 0,
+    "replicas": 1,
+    "versions": {
+      "v1": 3374
+    }
+  }
+]
