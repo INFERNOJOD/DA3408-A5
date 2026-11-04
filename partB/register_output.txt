@@ -1,0 +1,3 @@
+version | alias     | run_id
+      1 | prod      | 99e68750
+      2 | candidate | 5966c180
