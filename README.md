@@ -65,18 +65,24 @@ Exit code is 0 if all checks pass, 1 otherwise. Output is saved in partD/smoke_o
 
 ## For TAs: what to check
 
-| Rubric item | File |
-|---|---|
-| A1 service | partA/eta_app.py |
-| A2 tests | partA/test_eta_app.py |
-| A3 load test | partA/loadtest_*.json, REPORT.md |
-| B1 registration | partB/eta_mlflow.py (register), partB/register_output.txt |
-| B2 gate | partB/eta_mlflow.py (decide, promotion_gate), partB/test_gate.py, partB/gate_output.txt |
-| B3 shadow | partB/shadow_compare.py, partB/shadow_output.txt, REPORT.md |
-| C1 canary app | partC/eta_ray.py |
-| C2 verification | partC/verify_ray.py, partC/verify_output.txt |
-| C3 short answers | REPORT.md |
-| D1 release gate | partD/smoke_eta.py, partD/smoke_output.txt, REPORT.md (abort criteria) |
+| Rubric item | File | Screenshot (evidence/) |
+|---|---|---|
+| Setup | requirements.txt, eta_data.py | 01_env_setup.png |
+| A1 service | partA/eta_app.py | 03_partA_requests_and_422.png, 04_partA_live_checks_metrics.png |
+| A2 tests | partA/test_eta_app.py | 02_partA_pytest_passed.png |
+| A3 load test | partA/loadtest_*.json, REPORT.md | 05_partA_loadtest_tables.png |
+| B1 registration | partB/eta_mlflow.py (register), partB/list_registry.py, partB/register_output.txt | 06_partB_registry_aliases.png, 12_partB_mlflow_ui_registry_aliases.png, 16_partB_registry_listing.png |
+| B2 gate | partB/eta_mlflow.py (decide, promotion_gate), partB/test_gate.py, partB/gate_output.txt | 07_partB_gate_tests_passed.png, 08_partB_gate_default.png, 09_partB_gate_min_rel_gain_060.png |
+| B3 shadow | partB/shadow_compare.py, partB/shadow_output.txt, REPORT.md | 10_partB_shadow_output.png, 11_partB_alias_does_not_change_running_server.png |
+| C1 canary app | partC/eta_ray.py | 13_partC_verify_ray_all_passed.png |
+| C2 verification | partC/verify_ray.py, partC/verify_output.txt | 13_partC_verify_ray_all_passed.png |
+| C3 short answers | REPORT.md | – |
+| D1 release gate | partD/smoke_eta.py, partD/smoke_output.txt, REPORT.md (abort criteria) | 14_partD_smoke_go_and_nogo.png, 15_partD_smoke_v2_go.png |
+
+## Evidence
+
+`evidence/` has 16 screenshots taken on my VM while running the commands above (date/time bar visible in each).
+They are numbered in rubric order and mapped in the table above.
 
 ## AI use
 
