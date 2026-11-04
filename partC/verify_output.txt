@@ -1,0 +1,23 @@
+ray cluster CPUs: 2.0
+
+(a) weight=0.2 -> 0.203 of 1000 customers on candidate
+[PASS] (a) candidate share within 0.20 +/- 0.04
+
+(b) second call for 200 customers: 0 changed arm
+[PASS] (b) same arm on second call
+
+(c) after delete + redeploy of identical app: 0 of 200 changed arm
+[PASS] (c) same arm after redeploy
+
+(d) weight 0.2 -> 0.5: share now 0.513; 203 were on candidate, 0 moved back to prod
+[PASS] (d) nobody moves candidate -> prod when weight rises
+
+(e) X-Beta: 1 on 50 customers normally routed to prod -> 50/50 went to candidate
+[PASS] (e) header override sends all 50 to candidate
+
+deployments:
+  eta_v1   status=HEALTHY  replicas={'RUNNING': 2}
+  eta_v2   status=HEALTHY  replicas={'RUNNING': 1}
+  Router   status=HEALTHY  replicas={'RUNNING': 1}
+
+all checks passed
