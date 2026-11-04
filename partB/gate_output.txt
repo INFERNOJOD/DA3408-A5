@@ -1,0 +1,57 @@
+### promotion_gate() with default thresholds
+{
+  "criteria": {
+    "mae_gain": true,
+    "latency_p95": true,
+    "rush_slice": true,
+    "rain_slice": true
+  },
+  "promote": true,
+  "thresholds": {
+    "min_rel_gain": 0.03,
+    "max_p95_ms": 10.0,
+    "max_slice_regression": 0.05
+  },
+  "prod": {
+    "mae": 11.955,
+    "mae_rush": 19.68,
+    "mae_rain": 11.623,
+    "p95_ms": 0.859
+  },
+  "candidate": {
+    "mae": 6.105,
+    "mae_rush": 8.58,
+    "mae_rain": 6.285,
+    "p95_ms": 0.715
+  },
+  "rel_gain": 0.4893
+}
+
+### promotion_gate(min_rel_gain=0.60)
+{
+  "criteria": {
+    "mae_gain": false,
+    "latency_p95": true,
+    "rush_slice": true,
+    "rain_slice": true
+  },
+  "promote": false,
+  "thresholds": {
+    "min_rel_gain": 0.6,
+    "max_p95_ms": 10.0,
+    "max_slice_regression": 0.05
+  },
+  "prod": {
+    "mae": 11.955,
+    "mae_rush": 19.68,
+    "mae_rain": 11.623,
+    "p95_ms": 0.793
+  },
+  "candidate": {
+    "mae": 6.105,
+    "mae_rush": 8.58,
+    "mae_rain": 6.285,
+    "p95_ms": 0.881
+  },
+  "rel_gain": 0.4893
+}

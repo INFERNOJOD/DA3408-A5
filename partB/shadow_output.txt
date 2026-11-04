@@ -1,0 +1,12 @@
+requests sent to each server : 200
+model versions answering     : prod=['v1'] candidate=['v2']
+mean |prod - candidate|      : 9.48 min
+share differing by > 10 min  : 35.0 %
+max |prod - candidate|       : 51.7 min
+prod      latency p50 / p95  : 2.2 / 2.5 ms
+candidate latency p50 / p95  : 2.3 / 2.8 ms
+
+### alias test: move prod -> version 2 while the 5101 server is still running
+registry now says prod = version 2
+running 5101 server still answers: {"predictions": [{"eta_minutes": 38.0, "model_version": "v1"}]}
+alias moved back: prod = version 1
