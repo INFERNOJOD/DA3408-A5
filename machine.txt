@@ -1,0 +1,6 @@
+CPU(s):                                  4
+Model name:                              -
+               total        used        free      shared  buff/cache   available
+Mem:           7.2Gi       2.9Gi       921Mi       119Mi       3.4Gi       4.3Gi
+Python 3.12.15
+7.0.0-38-generic
