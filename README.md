@@ -83,11 +83,3 @@ Exit code is 0 if all checks pass, 1 otherwise. Output is saved in partD/smoke_o
 
 `evidence/` has 16 screenshots taken on my VM while running the commands above (date/time bar visible in each).
 They are numbered in rubric order and mapped in the table above.
-
-## AI use
-
-- I used Claude (Anthropic) as an AI-assisted tool, mainly for reviewing my work against the spec, debugging and documentation.
-- It suggested two small fixes: resolving the `ETA_MODEL` path against the repo root in `partA/eta_app.py`, and the read-only `partB/list_registry.py` script.
-- I reviewed every change before keeping it.
-- I ran all the services, tests, load tests, MLflow and Ray runs and smoke tests on my own VM.
-- All output files and screenshots come from those runs, and I captured the screenshots myself.
