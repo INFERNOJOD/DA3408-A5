@@ -209,9 +209,7 @@ Source: partD/smoke_output.txt
 - load tests against v2, the MLflow servers or the Ray app
 - the abort criteria in D1 are not implemented as alerts anywhere
 
-## Citations / AI use
+## Citations 
 
 - request-id middleware and validation handler idea adapted from the Module 4 lecture notebook (partA/eta_app.py).
 - Ray Serve deployment / handle pattern adapted from the Module 4 lecture notebook (partC/eta_ray.py).
-- used Claude Code for a final check against the spec, a couple of small fixes (model path, registry listing
-  script) .
